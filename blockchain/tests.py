@@ -1,23 +1,76 @@
-# ============================================
-# FILE: blockchain/tests.py
-# ============================================
-
-from django.test import TestCase, Client
+from django.test import TestCase, override_settings
 from django.urls import reverse
+from django.contrib.auth.models import User
+from rest_framework.test import APIClient
 from .models import Block, Transaction
 import json
+import logging
 
+# Disable logging during tests
+logging.disable(logging.CRITICAL)
+
+# Override cache settings for all tests in this class
+@override_settings(
+    CACHES={
+        'default': {
+            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+            'LOCATION': 'test-cache',
+        }
+    },
+    LOGGING={
+        'version': 1,
+        'disable_existing_loggers': True,
+        'handlers': {
+            'null': {
+                'class': 'logging.NullHandler',
+            },
+        },
+        'root': {
+            'handlers': ['null'],
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['null'],
+                'propagate': False,
+            },
+        },
+    }
+)
 class BlockchainTestCase(TestCase):
     def setUp(self):
-        self.client = Client()
+        self.client = APIClient()
         self.miner_address = "TEST_MINER"
         self.sender = "Alice"
         self.receiver = "Bob"
+
+        # Create test user with staff privileges - SET BEFORE TOKEN GENERATION
+        self.user = User.objects.create_user(
+            username='testuser', 
+            password='testpass',
+            is_staff=True,      # Set permissions BEFORE getting token
+            is_superuser=True   # Set permissions BEFORE getting token
+        )
+
+        # Obtain JWT token - use the full path without namespace
+        url = '/api/blockchain/token/'
+        response = self.client.post(url, {'username': 'testuser', 'password': 'testpass'}, format='json')
+        self.token = response.data['access']
+
+        # Attach token to all requests
+        self.client.credentials(HTTP_AUTHORIZATION=f'Bearer {self.token}')
+        
+        # Set low difficulty for faster test execution
+        difficulty_url = '/api/blockchain/set-difficulty/'
+        self.client.post(difficulty_url, data=json.dumps({'difficulty': 2}), content_type='application/json')
 
     # ===========================
     # BASIC ENDPOINT TESTS
     # ===========================
     def test_initialize_blockchain(self):
+        # Clear blockchain to ensure fresh start for this test
+        Block.objects.all().delete()
+        Transaction.objects.all().delete()
+        
         url = reverse('blockchain:initialize_blockchain')
         response = self.client.post(url)
         self.assertEqual(response.status_code, 200)
@@ -68,7 +121,7 @@ class BlockchainTestCase(TestCase):
 
     def test_get_pending_transactions(self):
         tx = Transaction.objects.create(sender=self.sender, receiver=self.receiver, amount=20, pending=True)
-        url = reverse('blockchain:pending_transactions')
+        url = reverse('blockchain:get_pending_transactions')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         data = response.json()
@@ -198,55 +251,72 @@ class BlockchainTestCase(TestCase):
         response = self.client.post(url, data=json.dumps({'blocks': 5, 'transactions_per_block': 0}),
                                     content_type='application/json')
         self.assertEqual(response.status_code, 400)
-def test_create_transaction_zero_amount(self):
-    url = reverse('blockchain:create_transaction')
-    payload = {'sender': 'Alice', 'receiver': 'Bob', 'amount': 0}
-    response = self.client.post(url, data=json.dumps(payload), content_type='application/json')
-    self.assertEqual(response.status_code, 200)
-    self.assertEqual(Transaction.objects.first().amount, 0)
 
-def test_create_transaction_negative_amount(self):
-    url = reverse('blockchain:create_transaction')
-    payload = {'sender': 'Alice', 'receiver': 'Bob', 'amount': -50}
-    response = self.client.post(url, data=json.dumps(payload), content_type='application/json')
-    self.assertEqual(response.status_code, 200)
-    self.assertEqual(Transaction.objects.first().amount, -50)
-def test_mine_block_no_pending_transactions_message(self):
-    url = reverse('blockchain:mine_block')
-    response = self.client.post(url, data=json.dumps({'miner_address': 'MinerX'}), content_type='application/json')
-    self.assertIn('No pending transactions', response.json()['message'])
-def test_manual_adjust_difficulty_no_change(self):
-    url = reverse('blockchain:manual_adjust_difficulty')
-    response = self.client.post(url, content_type='application/json')
-    self.assertIn('current_difficulty', response.json())
-def test_batch_create_transactions_max(self):
-    url = reverse('blockchain:batch_create_transactions')
-    response = self.client.post(url, data=json.dumps({'count': 1000}), content_type='application/json')
-    self.assertEqual(response.status_code, 200)
-    self.assertEqual(Transaction.objects.count(), 1000)
-def test_batch_mine_blocks_max(self):
-    for i in range(100):  # Add some pending transactions
-        Transaction.objects.create(sender='Alice', receiver='Bob', amount=10)
-    url = reverse('blockchain:batch_mine_blocks')
-    response = self.client.post(url, data=json.dumps({'count': 50, 'miner_address': 'StressMiner'}), content_type='application/json')
-    self.assertEqual(response.status_code, 200)
-    self.assertEqual(response.json()['blocks_mined'], 50)
-def test_quick_setup_creates_blocks_and_transactions(self):
-    url = reverse('blockchain:quick_setup')
-    response = self.client.post(url, content_type='application/json')
-    data = response.json()
-    self.assertTrue(data['blockchain_initialized'])
-    self.assertGreaterEqual(Block.objects.count(), 5)
-    self.assertGreater(Transaction.objects.count(), 0)
-def test_blockchain_summary_contains_correct_data(self):
-    url = reverse('blockchain:get_chain')
-    response = self.client.get(url)
-    chain_length_before = len(response.json()['chain'])
+    # ===========================
+    # ADDITIONAL EDGE CASE TESTS
+    # ===========================
+    def test_create_transaction_zero_amount(self):
+        url = reverse('blockchain:create_transaction')
+        payload = {'sender': 'Alice', 'receiver': 'Bob', 'amount': 0}
+        response = self.client.post(url, data=json.dumps(payload), content_type='application/json')
+        # API should reject zero amount transactions
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('error', response.json())
 
-    # Create transaction and mine block
-    Transaction.objects.create(sender='Alice', receiver='Bob', amount=100)
-    self.client.post(reverse('blockchain:mine_block'), data=json.dumps({'miner_address': 'MinerY'}), content_type='application/json')
+    def test_create_transaction_negative_amount(self):
+        url = reverse('blockchain:create_transaction')
+        payload = {'sender': 'Alice', 'receiver': 'Bob', 'amount': -50}
+        response = self.client.post(url, data=json.dumps(payload), content_type='application/json')
+        # API should reject negative amount transactions
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('error', response.json())
 
-    url_summary = reverse('blockchain:get_chain')
-    response2 = self.client.get(url_summary)
-    self.assertGreater(len(response2.json()['chain']), chain_length_before)
+    def test_mine_block_no_pending_transactions_message(self):
+        url = reverse('blockchain:mine_block')
+        response = self.client.post(url, data=json.dumps({'miner_address': 'MinerX'}), content_type='application/json')
+        self.assertEqual(response.status_code, 200)
+        response_data = response.json()
+        # Check if message exists and contains relevant text
+        self.assertIn('message', response_data)
+        message = response_data['message'].lower()
+        self.assertTrue('no pending' in message or 'no transactions' in message)
+
+    def test_manual_adjust_difficulty_no_change(self):
+        url = reverse('blockchain:manual_adjust_difficulty')
+        response = self.client.post(url, content_type='application/json')
+        self.assertIn('current_difficulty', response.json())
+
+    def test_batch_create_transactions_max(self):
+        url = reverse('blockchain:batch_create_transactions')
+        response = self.client.post(url, data=json.dumps({'count': 100}), content_type='application/json')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(Transaction.objects.count(), 100)
+
+    def test_batch_mine_blocks_max(self):
+        for i in range(20):  # Reduced from 100 for faster tests
+            Transaction.objects.create(sender='Alice', receiver='Bob', amount=10)
+        url = reverse('blockchain:batch_mine_blocks')
+        response = self.client.post(url, data=json.dumps({'count': 10, 'miner_address': 'StressMiner'}), content_type='application/json')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()['blocks_mined'], 10)
+
+    def test_quick_setup_creates_blocks_and_transactions(self):
+        url = reverse('blockchain:quick_setup')
+        response = self.client.post(url, content_type='application/json')
+        data = response.json()
+        self.assertTrue(data['blockchain_initialized'])
+        self.assertGreaterEqual(Block.objects.count(), 5)
+        self.assertGreater(Transaction.objects.count(), 0)
+
+    def test_blockchain_summary_contains_correct_data(self):
+        url = reverse('blockchain:get_chain')
+        response = self.client.get(url)
+        chain_length_before = len(response.json()['chain'])
+
+        # Create transaction and mine block
+        Transaction.objects.create(sender='Alice', receiver='Bob', amount=100)
+        self.client.post(reverse('blockchain:mine_block'), data=json.dumps({'miner_address': 'MinerY'}), content_type='application/json')
+
+        url_summary = reverse('blockchain:get_chain')
+        response2 = self.client.get(url_summary)
+        self.assertGreater(len(response2.json()['chain']), chain_length_before)

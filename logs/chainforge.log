@@ -112,3 +112,1306 @@ INFO 2025-10-23 21:36:32,801 autoreload C:\Users\santo\OneDrive\Desktop\chainfor
 INFO 2025-10-23 21:36:34,365 autoreload Watching for file changes with StatReloader
 INFO 2025-10-23 21:37:22,773 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\settings.py changed, reloading.
 INFO 2025-10-23 21:37:24,233 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-24 12:24:43,853 log Unauthorized: /api/batch-transactions/
+WARNING 2025-10-24 12:24:43,876 log Unauthorized: /api/batch-transactions/
+WARNING 2025-10-24 12:24:43,880 log Unauthorized: /api/batch-mine/
+WARNING 2025-10-24 12:24:43,884 log Unauthorized: /api/transaction/create/
+WARNING 2025-10-24 12:24:43,890 log Unauthorized: /api/transaction/create/
+WARNING 2025-10-24 12:24:43,894 log Unauthorized: /api/difficulty/
+WARNING 2025-10-24 12:24:43,897 log Unauthorized: /api/balance/Bob/
+WARNING 2025-10-24 12:24:43,902 log Unauthorized: /api/initialize/
+WARNING 2025-10-24 12:24:43,903 log Unauthorized: /api/chain/
+WARNING 2025-10-24 12:24:43,953 log Unauthorized: /api/initialize/
+WARNING 2025-10-24 12:24:43,955 log Unauthorized: /api/initialize/
+WARNING 2025-10-24 12:24:43,957 log Unauthorized: /api/mine/
+WARNING 2025-10-24 12:24:43,961 log Unauthorized: /api/mining-stats/
+WARNING 2025-10-24 12:24:43,964 log Unauthorized: /api/quick-setup/
+WARNING 2025-10-24 12:24:43,972 log Unauthorized: /api/reset/
+WARNING 2025-10-24 12:24:43,983 log Unauthorized: /api/simulate/
+WARNING 2025-10-24 12:24:43,988 log Unauthorized: /api/simulate/
+WARNING 2025-10-24 12:24:43,992 log Unauthorized: /api/simulate/
+WARNING 2025-10-24 12:24:43,999 log Unauthorized: /api/validate/
+INFO 2025-10-24 12:25:50,612 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-24 12:26:00,280 log Not Found: /api/blockchain/token/
+INFO 2025-10-24 12:26:14,308 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\urls.py changed, reloading.
+INFO 2025-10-24 12:26:16,308 autoreload Watching for file changes with StatReloader
+INFO 2025-10-24 12:26:23,380 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\blockchain\urls.py changed, reloading.
+INFO 2025-10-24 12:26:25,063 autoreload Watching for file changes with StatReloader
+ERROR 2025-10-24 12:39:47,965 log Internal Server Error: /api/blockchain/batch-transactions/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:39:52,333 log Internal Server Error: /api/blockchain/batch-transactions/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:39:56,384 log Internal Server Error: /api/blockchain/batch-transactions/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:00,594 log Internal Server Error: /api/blockchain/batch-mine/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:04,834 log Internal Server Error: /api/blockchain/batch-mine/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:09,065 log Internal Server Error: /api/blockchain/chain/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:13,321 log Internal Server Error: /api/blockchain/transaction/create/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:17,611 log Internal Server Error: /api/blockchain/transaction/create/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:29,283 log Internal Server Error: /api/blockchain/batch-transactions/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:33,495 log Internal Server Error: /api/blockchain/batch-transactions/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:37,916 log Internal Server Error: /api/blockchain/batch-transactions/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:43,065 log Internal Server Error: /api/blockchain/batch-mine/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:47,725 log Internal Server Error: /api/blockchain/batch-mine/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:53,402 log Internal Server Error: /api/blockchain/chain/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:40:58,169 log Internal Server Error: /api/blockchain/transaction/create/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:41:03,951 log Internal Server Error: /api/blockchain/transaction/create/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-10-24 12:41:18,737 log Internal Server Error: /api/blockchain/transaction/create/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+WARNING 2025-10-24 12:41:23,775 log Bad Request: /api/blockchain/transaction/create/
+WARNING 2025-10-24 12:41:27,276 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:41:36,794 views 10 transactions created by testuser
+WARNING 2025-10-24 12:41:38,877 log Bad Request: /api/blockchain/batch-transactions/
+INFO 2025-10-24 12:41:41,235 views 1000 transactions created by testuser
+INFO 2025-10-24 12:41:44,677 views 3 blocks mined by testuser
+INFO 2025-10-24 12:44:28,065 views 10 transactions created by testuser
+WARNING 2025-10-24 12:44:30,170 log Bad Request: /api/blockchain/batch-transactions/
+INFO 2025-10-24 12:44:32,517 views 1000 transactions created by testuser
+INFO 2025-10-24 12:44:36,182 views 3 blocks mined by testuser
+WARNING 2025-10-24 12:46:06,504 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:46:06,530 views 10 transactions created by testuser
+WARNING 2025-10-24 12:46:08,602 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:08,605 log Bad Request: /api/blockchain/batch-transactions/
+WARNING 2025-10-24 12:46:10,733 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:46:10,784 views 100 transactions created by testuser
+WARNING 2025-10-24 12:46:12,862 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:46:15,061 views 3 blocks mined by testuser
+WARNING 2025-10-24 12:46:17,098 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:46:23,199 views 10 blocks mined by testuser
+WARNING 2025-10-24 12:46:25,287 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:46:25,295 views Block mined by testuser: index=0
+WARNING 2025-10-24 12:46:27,201 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:27,203 log Bad Request: /api/blockchain/transaction/create/
+WARNING 2025-10-24 12:46:29,179 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:29,182 log Bad Request: /api/blockchain/transaction/create/
+WARNING 2025-10-24 12:46:31,273 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:46:31,276 views Transaction created by testuser: 1
+WARNING 2025-10-24 12:46:33,368 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:33,372 log Bad Request: /api/blockchain/transaction/create/
+WARNING 2025-10-24 12:46:35,458 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:35,463 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:37,503 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:39,549 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:39,551 log Forbidden: /api/blockchain/initialize/
+WARNING 2025-10-24 12:46:41,390 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:43,352 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:43,354 log Forbidden: /api/blockchain/initialize/
+WARNING 2025-10-24 12:46:45,635 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:45,637 log Forbidden: /api/blockchain/adjust-difficulty/
+WARNING 2025-10-24 12:46:47,705 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:49,780 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:49,783 log Forbidden: /api/blockchain/initialize/
+WARNING 2025-10-24 12:46:49,785 log Bad Request: /api/blockchain/mine/
+WARNING 2025-10-24 12:46:51,889 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:51,896 log Forbidden: /api/blockchain/set-target-time/
+WARNING 2025-10-24 12:46:53,962 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:53,965 log Forbidden: /api/blockchain/quick-setup/
+WARNING 2025-10-24 12:46:55,996 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:55,999 log Forbidden: /api/blockchain/quick-setup/
+WARNING 2025-10-24 12:46:58,403 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:46:58,406 log Forbidden: /api/blockchain/reset/
+WARNING 2025-10-24 12:47:00,732 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:48:07,234 views Difficulty set to 2 by testuser
+INFO 2025-10-24 12:48:07,250 views 10 transactions created by testuser
+INFO 2025-10-24 12:48:09,467 views Difficulty set to 2 by testuser
+WARNING 2025-10-24 12:48:09,473 log Bad Request: /api/blockchain/batch-transactions/
+WARNING 2025-10-24 12:48:11,552 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:48:11,596 views 100 transactions created by testuser
+WARNING 2025-10-24 12:48:13,618 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:48:13,632 views 3 blocks mined by testuser
+WARNING 2025-10-24 12:48:15,339 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:48:15,445 views 10 blocks mined by testuser
+WARNING 2025-10-24 12:48:17,616 log Forbidden: /api/blockchain/set-difficulty/
+INFO 2025-10-24 12:48:17,625 views Block mined by testuser: index=0
+WARNING 2025-10-24 12:48:19,717 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:48:19,721 log Bad Request: /api/blockchain/transaction/create/
+WARNING 2025-10-24 12:48:21,915 log Forbidden: /api/blockchain/set-difficulty/
+WARNING 2025-10-24 12:48:21,918 log Bad Request: /api/blockchain/transaction/create/
+INFO 2025-10-24 12:48:24,058 views Difficulty set to 2 by testuser
+INFO 2025-10-24 12:48:24,062 views Transaction created by testuser: 1

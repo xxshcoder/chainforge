@@ -995,8 +995,10 @@ For issues and questions, please open an issue on the GitHub repository.
 **Built with ❤️ using Django, Django REST Framework, and Redis**
 
 ad this in script section of postman:
-if (pm.response.code === 200) {
-var jsonData = pm.response.json();
-pm.environment.set("access_token", jsonData.access);
-pm.environment.set("refresh_token", jsonData.refresh);
-}
+
+````if (pm.response.code === 200) {
+    var jsonData = pm.response.json();
+    pm.environment.set("access_token", jsonData.access);
+    pm.environment.set("refresh_token", jsonData.refresh);
+}```
+````
