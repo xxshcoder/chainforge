@@ -1,0 +1,114 @@
+INFO 2025-10-23 20:45:45,850 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 20:51:18,645 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 20:52:47,696 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\settings.py changed, reloading.
+INFO 2025-10-23 20:52:48,812 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 20:52:54,327 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\settings.py changed, reloading.
+INFO 2025-10-23 20:52:55,881 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 20:53:03,790 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\settings.py changed, reloading.
+INFO 2025-10-23 20:53:04,928 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 20:53:28,152 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\settings.py changed, reloading.
+INFO 2025-10-23 20:53:29,410 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 21:13:01,462 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\urls.py changed, reloading.
+INFO 2025-10-23 21:13:03,792 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 21:13:26,400 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\urls.py changed, reloading.
+INFO 2025-10-23 21:13:28,001 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 21:14:20,541 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\blockchain\urls.py changed, reloading.
+INFO 2025-10-23 21:14:22,135 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 21:17:08,678 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\urls.py changed, reloading.
+INFO 2025-10-23 21:17:10,162 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 21:17:12,668 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\urls.py changed, reloading.
+INFO 2025-10-23 21:17:14,572 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 21:17:47,555 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\blockchain\urls.py changed, reloading.
+INFO 2025-10-23 21:17:49,133 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 21:18:08,033 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\blockchain\urls.py changed, reloading.
+INFO 2025-10-23 21:18:10,242 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 21:26:10,499 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\settings.py changed, reloading.
+INFO 2025-10-23 21:26:12,355 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-23 21:26:19,201 log Not Found: /api/blockchain/token/
+INFO 2025-10-23 21:28:08,859 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\manage.py changed, reloading.
+INFO 2025-10-23 21:28:10,305 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-23 21:28:14,306 log Not Found: /api/blockchain/token/
+INFO 2025-10-23 21:28:30,739 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\urls.py changed, reloading.
+INFO 2025-10-23 21:28:32,525 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-23 21:28:36,343 log Not Found: /api/blockchain/token/
+INFO 2025-10-23 21:30:18,166 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\urls.py changed, reloading.
+INFO 2025-10-23 21:30:20,730 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 21:30:33,030 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\blockchain\urls.py changed, reloading.
+INFO 2025-10-23 21:30:34,735 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-23 21:31:02,847 log Unauthorized: /api/blockchain/chain/
+WARNING 2025-10-23 21:31:05,838 log Not Found: /favicon.ico
+ERROR 2025-10-23 21:34:59,491 log Internal Server Error: /api/blockchain/initialize/
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 89, in add
+    return self.client.add(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 278, in add
+    return self.set(key, value, timeout, version=version, client=client, nx=True)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\decorators.py", line 19, in _wrapped
+    ratelimited = is_ratelimited(request=request, group=group, fn=fn,
+                                 key=key, rate=rate, method=method,
+                                 increment=True)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 153, in is_ratelimited
+    usage = get_usage(request, group, fn, key, rate, method, increment)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_ratelimit\core.py", line 231, in get_usage
+    added = cache.add(cache_key, initial_value, period + EXPIRATION_FUDGE)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\commands\core.py", line 2310, in set
+    return self.execute_command("SET", *pieces, **options)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 2601, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\santo\OneDrive\Desktop\chainforge\venv\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+INFO 2025-10-23 21:36:32,801 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\settings.py changed, reloading.
+INFO 2025-10-23 21:36:34,365 autoreload Watching for file changes with StatReloader
+INFO 2025-10-23 21:37:22,773 autoreload C:\Users\santo\OneDrive\Desktop\chainforge\chainforge\settings.py changed, reloading.
+INFO 2025-10-23 21:37:24,233 autoreload Watching for file changes with StatReloader
